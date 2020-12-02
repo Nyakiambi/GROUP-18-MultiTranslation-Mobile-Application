@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:backgroundTint="@color/colouredB"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<com.google.android.material.card.MaterialCardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="5dp"
+    android:layout_margin="10dp"
+    android:outlineAmbientShadowColor="@color/colorAccent"
+    app:strokeColor="@color/colouredB"
+    style="@style/Widget.MaterialComponents.CardView"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Do you have any issue that you would like to be addressed?"
+            android:textColor="@color/colorPrimaryDark"
+            android:textAlignment="center"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/reviewLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:hint="Enter your text here"
+            app:hintAnimationEnabled="true"
+            android:textAlignment="center"
+            app:endIconMode="clear_text"
+            android:layout_below="@+id/title"
+            app:counterEnabled="true"
+            app:counterMaxLength="1000"
+            app:counterTextColor="@color/red"
+            app:boxBackgroundMode="outline"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/complainInput"
+                android:layout_width="match_parent"
+                android:inputType="textPersonName"
+                android:layout_height="100dp"
+                android:editable="false"
+                android:drawableLeft="@drawable/hep_icon"
+                android:layout_marginHorizontal="5dp"
+                />
+        </com.google.android.material.textfield.TextInputLayout>
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="5dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="20dp"
+        android:outlineAmbientShadowColor="@color/colorAccent"
+        app:strokeColor="@color/green"
+        style="@style/Widget.MaterialComponents.CardView"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/title1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter your email so thatt we can get mback to you very soon"
+                android:textColor="@color/colorBlue"
+                android:textAlignment="center"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/emailLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:hint="Enter your email here"
+                app:hintAnimationEnabled="true"
+                android:textAlignment="center"
+                app:endIconMode="clear_text"
+                app:boxBackgroundMode="outline"
+                android:layout_below="@+id/title1"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailInput"
+                    android:layout_width="match_parent"
+                    android:inputType="textPersonName"
+                    android:layout_height="50dp"
+                    android:drawableRight="@drawable/email"
+                    android:layout_marginHorizontal="5dp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/emailLayout"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@color/colorWhite"
+                android:outlineSpotShadowColor="@color/colorPrimary"
+                android:text="cancel"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="submit"
+                android:layout_below="@id/emailLayout"
+                android:layout_alignRight="@id/emailLayout"
+                android:layout_margin="5dp"
+                />
+
+        </RelativeLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

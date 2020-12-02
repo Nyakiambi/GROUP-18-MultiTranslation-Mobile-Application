@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+<com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        android:layout_margin="5dp"
+    android:scrollbars="vertical"
+        android:outlineAmbientShadowColor="@color/colorAccent"
+        app:strokeColor="@color/green"
+        style="@style/Widget.MaterialComponents.CardView"
+        android:layout_marginBottom="10dp"
+        app:rippleColor="@color/green"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<!--            from material design components-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/languageSourcelayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:hint="Enter English text to translate"
+                app:hintAnimationEnabled="true"
+                android:textAlignment="center"
+                app:endIconMode="clear_text"
+                app:boxBackgroundMode="outline"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textSource"
+                    android:drawableRight="@drawable/flag_us"
+                    android:layout_width="match_parent"
+                    android:inputType="textPersonName"
+                    android:editable="true"
+                    android:layout_height="85dp"
+                    android:layout_marginHorizontal="5dp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Spinner
+                android:id="@+id/SourcelanguageSpinner"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/languageSourcelayout"
+                android:layout_alignParentLeft="true"/>
+            <Spinner
+                android:id="@+id/TargetlanguageSpinner"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/languageSourcelayout"
+                android:layout_alignParentRight="true"/>
+
+            <Button
+                android:id="@+id/translateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/SourcelanguageSpinner"
+                android:layout_centerInParent="true"
+                android:backgroundTint="@color/material_on_surface_emphasis_medium"
+                android:text="translate"/>
+
+
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+<!--    cardview for input text-->
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="15dp"
+        android:layout_margin="5dp"
+        style="@style/Widget.MaterialComponents.CardView"
+        android:layout_marginBottom="10dp"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/translatedTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:editable="false"
+                android:textColorHint="@color/green"
+                android:gravity="center_horizontal"
+                android:text="Translation results"
+                android:textColor="@android:color/holo_green_dark"
+                android:textStyle="normal" />
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/translatedText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:hint="Translated To Kiswahili"
+                android:layout_below="@id/translatedTitle"
+                app:endIconMode="clear_text"
+                app:boxBackgroundMode="outline"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/translatedString"
+                    android:layout_width="match_parent"
+                    android:inputType="textPersonName"
+                    android:layout_marginHorizontal="5dp"
+                    android:textStyle="italic"
+                    android:textColor="@color/red"
+                    android:layout_height="85dp"
+                    android:drawableRight="@drawable/flag_tz"
+                    android:editable="false"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <TextView
+                android:layout_marginTop="10dp"
+                android:id="@+id/retSource"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/translatedText"
+                android:textColor="@color/green"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                />
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/translatedText"
+                android:layout_centerInParent="true"
+                android:text="TO"
+                android:textColor="@color/colorBlue"
+                android:textStyle="bold"/>
+            <Spinner
+                android:id="@+id/targetLanguage"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_below="@id/translatedText"
+                android:layout_alignParentRight="true"/>
+            <Button
+                android:id="@+id/translateBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="Translate back"
+                android:layout_below="@id/targetLanguage"
+                android:layout_centerHorizontal="true"
+                android:backgroundTint="@color/green"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+</LinearLayout>
